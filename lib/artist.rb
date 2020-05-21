@@ -13,13 +13,7 @@ class Artist
     song.artist = self
   end
   def songs
-    songsarray=[]
-    Song.all each do |song|
-      if song.artist == self
-        songsarray << song
-      end
-    end
-    songsarray
+   Song.all.select {|song| song.artist == self}
   end
   def self.find_or_create_by_name(name)
     new_artist = nil
