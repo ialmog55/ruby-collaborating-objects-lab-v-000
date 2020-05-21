@@ -28,7 +28,7 @@ class Artist
     new_artist
   end
  def print_songs
-   self.songs
+   print self.songs
  end
 
 end
