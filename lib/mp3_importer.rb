@@ -1,16 +1,17 @@
 class MP3Importer
   attr_accessor :path
-  @@files =[]
+   
   def initialize(filepath)
     @path = filepath
-    file=@path.basename
-    if file.match (/mp3\z/)
-       @@files << file
-     end
   end
 
   def files
-   @@files
+   files=[]
+   Dir[@path].each do |fname|
+     if fname.match (/mp3\z/)
+       files << fname
+     end
+   end
   end
   def import
     self.files.each do |filename|
