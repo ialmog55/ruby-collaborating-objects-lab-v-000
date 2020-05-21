@@ -3,10 +3,10 @@ class MP3Importer
 
   def initialize(filepath)
     @path = filepath
-
   end
   def files
-    @files = Dir.entries(@path)
+   Dir.entries(@path)
+    
   end
   def import
     self.files.each do |filename|
