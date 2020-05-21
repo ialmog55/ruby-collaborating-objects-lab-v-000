@@ -7,7 +7,7 @@ class MP3Importer
 
   def files
    files=[]
-   Dir[@path].foreach do |fname|
+   Dir.glob(@path) do |fname|
      if fname.match (/mp3\z/)
        files << fname
      end
